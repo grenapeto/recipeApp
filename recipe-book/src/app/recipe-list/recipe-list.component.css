@@ -1,0 +1,29 @@
+.recipes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    margin: 2rem auto; 
+    max-width: 60rem; 
+  }
+  
+  .recipe-card {
+    flex: 1 1 calc(33.333% - 1rem); 
+    box-sizing: border-box;
+    max-width: calc(33.333% - 1rem);
+  }
+  
+  @media (max-width: 768px) {
+    .recipe-card {
+      flex: 1 1 calc(50% - 1rem); 
+      max-width: calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .recipe-card {
+      flex: 1 1 100%; 
+      max-width: 100%;
+    }
+  }
+  
