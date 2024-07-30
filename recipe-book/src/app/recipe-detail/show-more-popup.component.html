@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="desc" *ngFor="let description of recipeDescription">
+      <h2>{{ description.name}}</h2>
+      <p>{{ description.ingredients}}</p>
+      <p>{{description.instructions}}</p>
+    </div>
+  </div>
+  <div class="recipe"></div>
+</div>
+
