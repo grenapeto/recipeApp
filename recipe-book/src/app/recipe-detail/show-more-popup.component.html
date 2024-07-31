@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="desc" *ngFor="let description of recipeDescription">
-      <h2>{{ description.name}}</h2>
-      <p>{{ description.ingredients}}</p>
-      <p>{{description.instructions}}</p>
-    </div>
-  </div>
-  <div class="recipe"></div>
+<div *ngIf="recipe" class="details">
+  <h2>{{ recipe.name }}</h2>
+  
+  <h3>Ingredients:</h3>
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+  </ul>
+  
+  <h3>Instructions:</h3>
+  <ul>
+    <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+  </ul>
 </div>
-

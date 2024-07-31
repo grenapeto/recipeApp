@@ -4,6 +4,6 @@
       <mat-card-title>{{ recipe.name }}</mat-card-title>
     </mat-card-header>
     <img mat-card-image src="../../assets/{{recipe.image}}">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail [recipeId]="recipe.id"></app-recipe-detail>
   </mat-card>
 </div>
