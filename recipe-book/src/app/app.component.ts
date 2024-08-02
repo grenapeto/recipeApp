@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatFormFieldModule,
     MatCardModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule, HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
