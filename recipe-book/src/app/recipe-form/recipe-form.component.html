@@ -1,4 +1,4 @@
-<mat-card>
+  <mat-card>
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
         <h2>Add New Recipe</h2>
 
@@ -34,6 +34,23 @@
           </button>
         </div>
       </div>
+
+
+      
+        
+        <div formArrayName="images" class="form-section">
+          
+              <button mat-raised-button (click)="uploader.open({ onUpdate })">
+                Upload Image
+              </button>
+            </div>
+          <div *ngFor="let image of images.controls; let k=index">
+            <img [src]="image.value" alt="Recipe Image" class="uploaded-image"/>
+            <button mat-icon-button (click)="removeImage(k)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+       
   
       <button mat-raised-button color="accent" type="submit">Add Recipe</button>
     </form>
@@ -50,12 +67,9 @@
       <ol>
         <li *ngFor="let instruction of lastAddedRecipe.instructions">{{ instruction }}</li>
       </ol>
+      <div *ngFor="let image of lastAddedRecipe.images">{{ images }}>
+          <img [src]="image" alt="Recipe Image" class="uploaded-image"/>
+      </div>
     </mat-card-content>
   </mat-card>
-  
-
-
-
-
- 
 
