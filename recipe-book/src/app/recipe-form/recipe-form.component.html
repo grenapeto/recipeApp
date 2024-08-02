@@ -1,18 +1,18 @@
-<mat-card>
+<!-- <mat-card>
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Recipe Name</mat-label>
         <input matInput formControlName="name" required>
       </mat-form-field>
   
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Ingredients</mat-label>
         <input matInput formControlName="ingredients" required>
       </mat-form-field>
   
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Instructions</mat-label>
-        <input matInput formControlName="instructions" required>
+        <textarea matInput formControlName="instructions" required></textarea>
       </mat-form-field>
   
       <button mat-raised-button color="primary" type="submit">Add Recipe</button>
@@ -20,3 +20,66 @@
   </mat-card>
 
 
+  <mat-card *ngIf="lastAddedRecipe" style="margin-top: 16px;">
+    <mat-card-title>{{ lastAddedRecipe.name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Ingredients:</strong> {{ lastAddedRecipe.ingredients }}</p>
+      <p><strong>Instructions:</strong> {{ lastAddedRecipe.instructions }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  -->
+
+  <mat-card>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Recipe Name</mat-label>
+        <input matInput formControlName="name" required>
+      </mat-form-field>
+  
+      <div formArrayName="ingredients" class="form-section">
+        <h3>Ingredients</h3>
+        <button mat-raised-button color="primary" (click)="addIngredient()" type="button">Add Ingredient</button>
+        <div *ngFor="let ingredient of ingredients.controls; let i = index" class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Ingredient {{i + 1}}</mat-label>
+            <input matInput [formControlName]="i" required>
+          </mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeIngredient(i)" type="button">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+  
+      <div formArrayName="instructions" class="form-section">
+        <h3>Instructions</h3>
+        <button mat-raised-button color="primary" (click)="addInstruction()" type="button">Add Instruction</button>
+        <div *ngFor="let instruction of instructions.controls; let j = index" class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Instruction {{j + 1}}</mat-label>
+            <textarea matInput [formControlName]="j" required></textarea>
+          </mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeInstruction(j)" type="button">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+  
+      <button mat-raised-button color="primary" type="submit">Add Recipe</button>
+    </form>
+  </mat-card>
+  
+  <mat-card *ngIf="lastAddedRecipe" style="margin-top: 16px;">
+    <mat-card-title>{{ lastAddedRecipe.name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Ingredients:</strong></p>
+      <ul>
+        <li *ngFor="let ingredient of lastAddedRecipe.ingredients">{{ ingredient }}</li>
+      </ul>
+      <p><strong>Instructions:</strong></p>
+      <ol>
+        <li *ngFor="let instruction of lastAddedRecipe.instructions">{{ instruction }}</li>
+      </ol>
+    </mat-card-content>
+  </mat-card>
+  
