@@ -1,0 +1,9 @@
+/* Ensure that the mat-label is always visible */
+.mat-form-field-appearance-fill .mat-form-field-label-wrapper {
+    top: 0;
+    transform: translateY(0.5em) scale(0.75); /* Adjust translateY and scale values as necessary */
+  }
+  
+  .mat-form-field-label {
+    transition: none; /* Disable transition for immediate visibility */
+  }

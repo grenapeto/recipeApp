@@ -1,1 +1,22 @@
-<p>recipe-form works!</p>
+<mat-card>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Recipe Name</mat-label>
+        <input matInput formControlName="name" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Ingredients</mat-label>
+        <input matInput formControlName="ingredients" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Instructions</mat-label>
+        <input matInput formControlName="instructions" required>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Add Recipe</button>
+    </form>
+  </mat-card>
+
+

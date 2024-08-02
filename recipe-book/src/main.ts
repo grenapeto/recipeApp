@@ -3,12 +3,23 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import routeConfig from './app/routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// bootstrapApplication(AppComponent,
+//   {
+//     providers: [
+//       provideProtractorTestingSupport(),
+//       provideRouter(routeConfig)
+//     ]
+//   }
+// ).catch(err => console.error(err));
 
 bootstrapApplication(AppComponent,
   {
     providers: [
       provideProtractorTestingSupport(),
-      provideRouter(routeConfig)
+      provideRouter(routeConfig),
+      { provide: BrowserAnimationsModule, useValue: BrowserAnimationsModule }
     ]
   }
 ).catch(err => console.error(err));
