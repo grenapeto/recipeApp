@@ -1,44 +1,149 @@
-/* Ensure that the mat-label is always visible */
-.mat-form-field-appearance-fill .mat-form-field-label-wrapper {
-    top: 0;
-    transform: translateY(0.5em) scale(0.75); /* Adjust translateY and scale values as necessary */
-  }
-  
-  .mat-form-field-label {
-    transition: none; /* Disable transition for immediate visibility */
-  }
 
-  mat-card {
-    align-items: center;
-    padding: 5%;
-    border-radius: 1rem;
-    border: 1px solid black;
-    width: 40%;
-    margin: 5% auto;
-    background-color: #F8F9FA;
-  }
+mat-card {
+  align-items: center;
+  padding: 2%;
+  border-radius: 1rem;
+  border: 1px solid black;
+  background-color: #f8f9fa;
+  margin: 5% auto;
+}
 
-  /* button { 
-    margin: 5% 0;
-  } */
-
- mat-form-field {
+mat-form-field {
   flex-direction: row;
-    background-color: white;
-  }
+  background-color: white;
+  margin-bottom: 5%;
+}
+mat-card-title {
+  padding-bottom: 10%;
+}
+.mat-form-field-appearance-fill .mat-form-field-label-wrapper {
+  top: 0;
+  transform: translateY(0.5em) scale(0.75);
+}
 
-  h2 { margin:0}
+.mat-form-field-label {
+  transition: none;
+}
 
-  .form-section {
-    margin: 1.5rem 0;
-  }
 
-  mat-card-title {
-    padding-bottom: 10%;
+
+h2 {
+  margin: 0;
+}
+
+.form-section {
+  margin: 1.5rem 0;
+}
+
+
+
+.uploaded-image {
+  width: 100%;
+  height: auto;
+  margin: 5px 0;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+button {
+  margin-bottom: 5%;
+}
+
+@media (max-width: 576px) {
+  mat-card {
+    max-width: 100%;
+    padding: 5%;
   }
 
   .uploaded-image {
-    width: 100px; /* Adjust the width as needed */
-    height: auto;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  mat-form-field {
+    margin-bottom: 8%;
+  }
+
+  button {
+    margin-bottom: 10%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  mat-card {
+    max-width: 90%;
+    padding: 4%;
+  }
+
+  .uploaded-image {
+    width: 90%;
+    margin: 8px 0;
+  }
+
+  mat-form-field {
+    margin-bottom: 6%;
+  }
+
+  button {
+    margin-bottom: 8%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  mat-card {
+    max-width: 80%;
+    padding: 3%;
+  }
+
+  .uploaded-image {
+    width: 80%;
+    margin: 6px 0;
+  }
+
+  mat-form-field {
+    margin-bottom: 5%;
+  }
+
+  button {
+    margin-bottom: 6%;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  mat-card {
+    max-width: 60%;
+    padding: 2%;
+  }
+
+  .uploaded-image {
+    width: 70%;
     margin: 5px 0;
   }
+
+  mat-form-field {
+    margin-bottom: 4%;
+  }
+
+  button {
+    margin-bottom: 5%;
+  }
+}
+
+@media (min-width: 1441px) {
+  mat-card {
+    max-width: 50%;
+    padding: 2%;
+  }
+
+  .uploaded-image {
+    width: 60%;
+    margin: 4px 0;
+  }
+
+  mat-form-field {
+    margin-bottom: 3%;
+  }
+
+  button {
+    margin-bottom: 4%;
+  }
+}
