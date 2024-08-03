@@ -36,3 +36,9 @@
   mat-card-title {
     padding-bottom: 10%;
   }
+
+  .uploaded-image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    margin: 5px 0;
+  }
