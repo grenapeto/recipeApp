@@ -1,13 +1,15 @@
 import { Component, ChangeDetectionStrategy, inject, Input, Inject } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { MOCK_RECIPES } from '../mock-recipes';
-import {MatButtonModule} from '@angular/material/button';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogModule} from '@angular/material/dialog';
-import { CommonModule, NgFor } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
+
+
 @Component({
   selector: 'app-recipe-detail',
   standalone: true,
-  imports: [MatButtonModule, MatDialogModule, NgFor, CommonModule],
+  imports: [MatButtonModule, MatDialogModule, CommonModule],
   templateUrl: './recipe-detail.component.html',
   styleUrl: './recipe-detail.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,7 +36,8 @@ export class RecipeDetailComponent {
   templateUrl: 'show-more-popup.component.html',
   standalone: true,
   styleUrl: './recipe-detail.component.css',
-  imports: [MatDialogModule, MatButtonModule, CommonModule, NgFor, CommonModule],
+  imports: [MatDialogModule, MatButtonModule, 
+    CommonModule, NgIf, NgFor, CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowMorePopup {
@@ -53,4 +56,6 @@ getRecipeDetails(id: number) {
     this.recipe = recipe;
   });
 }
+
 }
+
