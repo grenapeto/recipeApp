@@ -17,6 +17,10 @@ mat-form-field {
 mat-card-title {
   padding-bottom: 10%;
 }
+
+.button-color {
+  background-color: #00D395 !important;
+}
 .mat-form-field-appearance-fill .mat-form-field-label-wrapper {
   top: 0;
   transform: translateY(0.5em) scale(0.75);
@@ -144,3 +148,4 @@ button {
     margin-bottom: 4%;
   }
 }
+

@@ -12,7 +12,7 @@
   
       <div formArrayName="ingredients" class="form-section">
         <h2>Ingredients</h2>
-        <button mat-raised-button color="primary" (click)="addIngredient()" type="button">
+        <button mat-raised-button class="button-color" (click)="addIngredient()" type="button">
           Add Ingredient
         </button>
         <div *ngFor="let ingredient of ingredients.controls; let i = index" class="form-row">
@@ -31,7 +31,7 @@
 
       <div formArrayName="instructions" class="form-section">
         <h2>Instructions</h2>
-        <button mat-raised-button color="primary" (click)="addInstruction()" type="button">
+        <button mat-raised-button class="button-color" (click)="addInstruction()" type="button">
           Add Instruction
         </button>
         <div *ngFor="let instruction of instructions.controls; let j = index" class="form-row">

@@ -16,7 +16,7 @@ const routeConfig: Routes = [
         title: 'Recipe Detail page'
       },
       {
-        path: 'recipe-form',
+        path: 'add-recipe',
         component: RecipeFormComponent,
         title: 'Recipe Form page'
       },
