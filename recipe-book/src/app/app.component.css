@@ -9,10 +9,22 @@ a {
 }
 .mat-toolbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
+  padding: 0 16px;
 }
 
-.spacer {
-  flex: 1 1 auto;
+.logo {
+  flex: 0 0 auto; 
+}
+
+.items {
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+}
+
+button {
+  margin: 0 8px;
+  color: #06285D !important;
 }

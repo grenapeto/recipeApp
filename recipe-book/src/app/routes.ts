@@ -6,7 +6,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 const routeConfig: Routes = [
     {
-      path: '',
+      path: 'home',
       component: HomeComponent,
       title: 'Home page'
     },

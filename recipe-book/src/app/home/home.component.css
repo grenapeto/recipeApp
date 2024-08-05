@@ -1,17 +1,4 @@
-.home-container {
-    text-align: center;
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 800px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  button {
-    background-color: #00D395 !important;
-  }
-  
-  h1 {
+h1 {
     font-size: 2rem;
     margin-bottom: 20px;
   }
@@ -21,6 +8,22 @@
     margin-bottom: 40px;
   }
   
+  h1, h2, p, button {
+    color: #06285D !important;
+  }
+  button {
+    background-color: #00D395 !important;
+  }
+  .home-container {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
   .home-links {
     display: flex;
     justify-content: space-around;
