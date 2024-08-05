@@ -106,6 +106,9 @@ export class RecipeDetailComponent {
   showMore() {
     const dialogRef = this.dialog.open(ShowMorePopup, {
       data: { id: this.recipeId },
+      width: '80%',
+      maxHeight: '80%',
+      panelClass: 'custom-dialog-container'
     });
 
     dialogRef.afterClosed().subscribe((result) => {
