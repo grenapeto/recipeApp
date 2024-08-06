@@ -1,34 +1,42 @@
 <mat-card>
-    <mat-card-header>
-      <mat-card-title class="header-left">{{ recipe?.name }}</mat-card-title>
-      <mat-card-actions class="header-right">
-        <button mat-raised-button *ngIf="!editMode" (click)="toggleEditMode()">Edit</button>
-      </mat-card-actions>
-    </mat-card-header>
-  
-    <mat-divider></mat-divider>
-  
-    <mat-card-content>
-      <ng-container *ngIf="!editMode; else editTemplate">
-        <h3>Ingredients:</h3>
-        <mat-list role="list" class="details">
-          <mat-list-item role="listitem" *ngFor="let ingredient of recipe?.ingredients">
-            {{ ingredient }}
-          </mat-list-item>
-        </mat-list>
-  
-        <h3>Instructions:</h3>
-        <mat-list role="list" class="details">
-          <mat-list-item role="listitem" *ngFor="let instruction of recipe?.instructions">
-            {{ instruction }}
-          </mat-list-item>
-        </mat-list>
-      </ng-container>
-  
-      <ng-template #editTemplate>
+  <mat-card-header>
+    <mat-card-title class="header-left">{{ recipe?.name }}</mat-card-title>
+    <mat-card-actions class="header-right">
+      <button mat-raised-button *ngIf="!editMode" (click)="toggleEditMode()">
+        Edit
+      </button>
+    </mat-card-actions>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <ng-container *ngIf="!editMode; else editTemplate">
+      <h3>Ingredients:</h3>
+      <mat-list role="list" class="details">
+        <mat-list-item
+          role="listitem"
+          *ngFor="let ingredient of recipe?.ingredients"
+        >
+          {{ ingredient }}
+        </mat-list-item>
+      </mat-list>
+
+      <h3>Instructions:</h3>
+      <mat-list role="list" class="details">
+        <mat-list-item
+          role="listitem"
+          *ngFor="let instruction of recipe?.instructions"
+        >
+          {{ instruction }}
+        </mat-list-item>
+      </mat-list>
+    </ng-container>
+
+    <ng-template #editTemplate>
         <h3>Ingredients:</h3>
         <mat-list>
-          <mat-list-item *ngFor="let ingredient of recipe?.ingredients; let i = index">
+          <mat-list-item *ngFor="let ingredient of recipe?.ingredients; let i = index" class="editableItems">
             <mat-form-field class="full-width">
               <mat-label>Ingredient {{ i + 1 }}</mat-label>
               <input matInput [(ngModel)]="recipe.ingredients[i]" placeholder="Ingredient" />
@@ -41,10 +49,10 @@
             <mat-icon>add_circle</mat-icon> Add Ingredient
           </button>
         </mat-list>
-  
+      
         <h3>Instructions:</h3>
         <mat-list>
-          <mat-list-item *ngFor="let instruction of recipe?.instructions; let i = index">
+          <mat-list-item *ngFor="let instruction of recipe?.instructions; let i = index" class="editableItems">
             <mat-form-field class="full-width">
               <mat-label>Instruction {{ i + 1 }}</mat-label>
               <input matInput [(ngModel)]="recipe.instructions[i]" placeholder="Instruction" />
@@ -57,12 +65,11 @@
             <mat-icon>add_circle</mat-icon> Add Instruction
           </button>
         </mat-list>
-  
+      
         <mat-card-actions>
           <button mat-raised-button color="accent" (click)="saveChanges()">Save</button>
-          <!-- <button mat-raised-button color="warn" (click)="cancelChanges()">Cancel</button> -->
         </mat-card-actions>
       </ng-template>
-    </mat-card-content>
-  </mat-card>
-  
+      
+  </mat-card-content>
+</mat-card>

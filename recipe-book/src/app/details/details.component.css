@@ -1,0 +1,47 @@
+/* Ensure mat-form-field takes full width and has a consistent appearance */
+mat-form-field {
+    width: 100%; /* Full width */
+    margin-bottom: 16px; /* Space between fields */
+  }
+  
+  /* Target the inner wrapper of the mat-form-field to remove unwanted padding */
+  mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0 !important; /* Remove extra bottom padding */
+  }
+  
+  /* Control the flexbox container within the mat-form-field */
+  mat-form-field .mat-form-field-flex {
+    height: auto; /* Allow height to adjust */
+  }
+  
+  /* Set specific height and padding for the input container */
+  mat-form-field .mat-form-field-infix {
+    padding: 0 8px; /* Horizontal padding, zero vertical padding */
+    min-height: 48px; /* Minimum height for input container */
+    display: flex;
+    align-items: center; /* Center content vertically */
+  }
+  
+  /* Apply height settings directly to input elements */
+  .mat-input-element {
+    height: auto; /* Auto height allows natural adjustment */
+    min-height: 36px; /* Minimum height for input fields */
+    padding: 8px; /* Padding inside the input for better text visibility */
+    box-sizing: border-box; /* Include padding and borders in total element size */
+    font-size: 16px; /* Adjust font size if needed */
+    line-height: 1.5; /* Adjust line height for better text readability */
+  }
+  
+  /* Flex settings for list items to ensure alignment and spacing */
+  .editableItems {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; /* Space between list items */
+    min-height: 85px;
+  }
+  
+  /* Space between the input and button */
+  button.mat-icon-button {
+    margin-left: 8px; 
+  }
+  
