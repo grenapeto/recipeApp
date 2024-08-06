@@ -6,8 +6,8 @@
     <img mat-card-image [src]="'../../assets/' + recipe.image" alt="{{ recipe.name }}">
     <div class="container">
       <div class="row">
-        <app-recipe-detail [recipeId]="recipe.id" class="btns"></app-recipe-detail>
-        <button mat-button (click)="deleteRecipe(recipe.id)" class="btns">Delete Recipe</button>
+        <app-recipe-detail [recipeId]="recipe.id" class="btns btn-left"></app-recipe-detail>
+        <button mat-button (click)="deleteRecipe(recipe.id)" class="btns btn-right">Delete Recipe</button>
       </div>
     </div>
   </mat-card>

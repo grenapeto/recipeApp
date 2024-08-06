@@ -28,3 +28,19 @@ button {
   margin: 0 8px;
   color: #06285D !important;
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: #06285D;
+  height: 56px; 
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    height: 48px;
+  }
+}

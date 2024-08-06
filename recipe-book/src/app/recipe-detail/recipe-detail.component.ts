@@ -73,16 +73,6 @@ import {
   MatDialogModule,
 } from '@angular/material/dialog';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { MatList, MatListItem } from '@angular/material/list';
-import {
-  MatCard,
-  MatCardActions,
-  MatCardContent,
-  MatCardTitle,
-} from '@angular/material/card';
-import { MatDivider } from '@angular/material/divider';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -106,8 +96,7 @@ export class RecipeDetailComponent {
   showMore() {
     const dialogRef = this.dialog.open(ShowMorePopup, {
       data: { id: this.recipeId },
-      width: '80%',
-      maxHeight: '80%',
+      // width: 'auto',
       panelClass: 'custom-dialog-container'
     });
 

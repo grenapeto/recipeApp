@@ -68,15 +68,15 @@
     </form>
   </mat-card>
 
-  <mat-card *ngIf="lastAddedRecipe" style="margin-top: 16px;">
+  <mat-card *ngIf="lastAddedRecipe" >
     <mat-card-title>{{ lastAddedRecipe.name }}</mat-card-title>
-    <mat-card-content>
-      <p><strong>Ingredients:</strong></p>
+    <mat-card-content class="last-recipe">
+    <h2>Ingredients:</h2>
       <ul>
         <li *ngFor="let ingredient of lastAddedRecipe.ingredients">{{ ingredient }}</li>
       </ul>
 
-      <p><strong>Instructions:</strong></p>
+      <h2>Instructions:</h2>
       <ol>
         <li *ngFor="let instruction of lastAddedRecipe.instructions">{{ instruction }}</li>
       </ol>

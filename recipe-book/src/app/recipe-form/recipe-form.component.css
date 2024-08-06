@@ -6,7 +6,7 @@ mat-card {
   border: 1px solid black;
   background-color: #f8f9fa;
   margin: 5% auto;
-
+  width: 60%;
 }
 
 mat-form-field {
@@ -18,9 +18,22 @@ mat-card-title {
   padding-bottom: 10%;
 }
 
+h2 {
+  margin: 0;
+}
+
+li {
+  width: calc(100% - 20px);
+  word-wrap: break-word;
+}
+
+h2, li, mat-card-title  {
+  color: #06285D !important;
+}
 .button-color {
   background-color: #00D395 !important;
 }
+
 .mat-form-field-appearance-fill .mat-form-field-label-wrapper {
   top: 0;
   transform: translateY(0.5em) scale(0.75);
@@ -30,24 +43,27 @@ mat-card-title {
   transition: none;
 }
 
-h2 {
-  margin: 0;
-}
-
 .form-section {
   margin: 1.5rem 0;
 }
 
 .uploaded-image {
-  width: 100%;
+  width: 80%;
   height: auto;
-  margin: 5px 0;
   border-radius: 5px;
   object-fit: cover;
 }
 
 button {
   margin-bottom: 5%;
+}
+
+p {
+  text-align: center;
+}
+
+.last-recipe {
+  width: inherit;
 }
 
 @media (max-width: 576px) {

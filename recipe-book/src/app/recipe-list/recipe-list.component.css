@@ -1,3 +1,22 @@
+button:hover {
+  background-color: #00D395 !important;
+}
+
+.btn-left {
+  background-color: #00D395 !important;
+}
+.btn-left:hover {
+  background-color: #ffffff !important;
+}
+
+
+.btn-right:hover {
+  background-color: #00D395 !important;
+}
+mat-card-title, button {
+  color: #06285D !important;
+  font-weight: bolder;
+}
 .recipes-container {
     display: flex;
     justify-content: center;
@@ -9,9 +28,7 @@
   .btns {
     width: 50%;
     padding: 2%;
-    border: none;
-    background-color: #F8F9FA;
-  
+    border: none;  
   }
 
   .recipe-card {
