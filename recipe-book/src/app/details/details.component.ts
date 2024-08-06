@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { RecipeService } from '../recipe.service';
 import { MatCard } from '@angular/material/card';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -26,29 +26,41 @@ import { RouterModule } from '@angular/router';
     CommonModule, // Common Angular directives (NgIf, NgFor)
     FormsModule,
     MatCard,
-    RouterModule
+    RouterModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './details.component.html',
-  styleUrl: './details.component.css'
+  styleUrl: './details.component.css',
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit {
   recipe: any = null; // Initialize recipe to null
   editMode: boolean = false; // Initialize editMode to false
+  id: number | null = null; // Use number for ID
   constructor(
     private recipeService: RecipeService,
-    @Inject(MAT_DIALOG_DATA) public data: { id: number }
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.getRecipeDetails(this.data.id);
+    this.route.paramMap.subscribe((params) => {
+      const idParam = params.get('id');
+      this.id = idParam ? +idParam : null; // Convert ID to number
+      if (this.id !== null) {
+        this.getRecipeDetails(this.id);
+      }
+    });
   }
 
   getRecipeDetails(id: number) {
-    this.recipeService.getRecipeById(id).subscribe(recipe => {
-      // Clone the recipe to avoid direct modification before saving
-      this.recipe = { ...recipe };
-    });
+    this.recipeService.getRecipeById(id).subscribe(
+      (recipe) => {
+        console.log('Fetched Recipe:', recipe);
+        this.recipe = { ...recipe };
+      },
+      (error: any) => {
+        console.log('Error fetching recipe details: ', error);
+      }
+    );
   }
 
   toggleEditMode() {
@@ -86,11 +98,9 @@ export class DetailsComponent {
     this.editMode = false;
   }
 
-  cancelChanges() {
-    // Revert any unsaved changes and exit edit mode
-    this.getRecipeDetails(this.data.id); // Reload the recipe details
-    this.editMode = false;
-  }
+  // cancelChanges() {
+  //   // Revert any unsaved changes and exit edit mode
+  //   this.getRecipeDetails(this.data.id); // Reload the recipe details
+  //   this.editMode = false;
+  // }
 }
-
-

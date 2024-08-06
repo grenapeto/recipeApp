@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecipeDetailComponent {
-  @Input() recipeId: any;
+  @Input() recipeId!: number;
   recipes = MOCK_RECIPES;
   
   // tu musis zobrat recept z recipes podla recipeId a poslat to do DetailsComponent
