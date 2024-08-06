@@ -4,6 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailComponent } from '../recipe-detail/recipe-detail.component';
+import { DetailsComponent } from '../details/details.component';
 
 @Component({
   selector: 'app-recipe-list',
@@ -12,14 +13,15 @@ import { RecipeDetailComponent } from '../recipe-detail/recipe-detail.component'
     MatListModule, 
     CommonModule, 
     MatCardModule, 
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    DetailsComponent
   ],
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'] 
 })
 export class RecipeListComponent implements OnInit {
 
-  recipes: any[] = []; //????????
+  recipes: any[] = [];
 
   constructor(private recipeService: RecipeService) {}
 

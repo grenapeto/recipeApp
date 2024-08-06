@@ -1,1 +1,5 @@
-<button mat-button (click)="showMore()">Show full recipe</button>
+<!-- <button mat-button routerLink="/details">Show full recipe</button> -->
+
+<button mat-button [routerLink]="['/details', recipeId]">Show full recipe</button>
+
+
