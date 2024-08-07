@@ -1,3 +1,11 @@
+mat-card-title, button {
+  color: #06285D !important;
+  font-weight: bolder;
+}
+mat-icon {
+ size: 20%;
+}
+
 button:hover {
   background-color: #00D395 !important;
 }
@@ -8,20 +16,35 @@ button:hover {
 .btn-left:hover {
   background-color: #ffffff !important;
 }
-
+.btn-right {
+  font-size:medium;
+}
 
 .btn-right:hover {
   background-color: #00D395 !important;
 }
-mat-card-title, button {
-  color: #06285D !important;
-  font-weight: bolder;
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.wiggle-animation:hover {
+  animation: wiggle 3s ease-in-out infinite; /* Adjust duration, easing */
+}
+
+/* Optional: Add a delay to start animation after hovering */
+.wiggle-animation:hover {
+  animation-delay: 0.2s; /* Start the animation after 0.2 seconds of hovering */
 }
 .recipes-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem; 
+    gap: 1.5rem; 
     margin: 2rem auto; 
     max-width: 60rem; 
   }
@@ -30,13 +53,27 @@ mat-card-title, button {
     padding: 2%;
     border: none;  
   }
-
+.icon {
+  transform: scale(0.8);
+}
   .recipe-card {
     flex: 1 1 calc(33.333% - 1rem); 
     box-sizing: border-box;
     max-width: calc(33.333% - 1rem);
   }
-  
+  .duration {
+    position: absolute;
+    top: -10px; /* Positioning from the top */
+    right: -10px; /* Positioning from the right */
+    background-color: #06285D;
+    color: #fafafa;
+    padding: 4px 12px; /* Padding for the text */
+    border-radius: 20px; /* Oval shape */
+    font-size: 10px; /* Font size for the text */
+     /* Make the text bold */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    height: 35px;
+  }
   @media (max-width: 768px) {
     .recipe-card {
       flex: 1 1 calc(50% - 1rem); 

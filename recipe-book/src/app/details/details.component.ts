@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { RecipeService } from '../recipe.service';
 import { MatCard } from '@angular/material/card';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-details',
@@ -27,6 +28,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
     FormsModule,
     MatCard,
     RouterModule,
+    MatCheckboxModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './details.component.html',

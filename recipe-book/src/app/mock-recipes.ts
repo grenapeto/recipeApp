@@ -19,6 +19,7 @@ export const MOCK_RECIPES = [
       'Slice and serve hot.',
     ],
     image: 'image1.jpg',
+    time: '60min'
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ export const MOCK_RECIPES = [
       'Serve over cooked rice.',
     ],
     image: 'image2.jpg',
+    time: '35min'
   },
   {
     id: 3,
@@ -69,6 +71,7 @@ export const MOCK_RECIPES = [
       'Allow cookies to cool on the baking sheet for a few minutes before transferring to a wire rack.',
     ],
     image: 'image3.jpg',
+    time: '40min'
   },
   {
     id: 4,
@@ -93,6 +96,7 @@ export const MOCK_RECIPES = [
       'Garnish with fresh parsley before serving.',
     ],
     image: 'image4.jpg',
+    time: '40min'
   },
   {
     id: 5,
@@ -115,6 +119,7 @@ export const MOCK_RECIPES = [
       'Serve over cooked rice.',
     ],
     image: 'image5.jpg',
+    time: '50min'
   },
   {
     id: 6,
@@ -136,6 +141,7 @@ export const MOCK_RECIPES = [
       'Chill in the refrigerator before serving.',
     ],
     image: 'image6.jpg',
+    time: '25min'
   },
   {
     id: 7,
@@ -158,6 +164,7 @@ export const MOCK_RECIPES = [
       'Drizzle with balsamic glaze before serving.',
     ],
     image: 'image7.jpg',
+    time: '20min'
   },
   {
     id: 8,
@@ -182,6 +189,7 @@ export const MOCK_RECIPES = [
       'Serve over cooked white rice.',
     ],
     image: 'image8.jpg',
+    time: '45min'
   },
   {
     id: 9,
@@ -202,6 +210,7 @@ export const MOCK_RECIPES = [
       'Serve immediately as a refreshing salad.',
     ],
     image: 'image9.jpg',
+    time: '25min'
   },
   {
     id: 10,
@@ -226,5 +235,6 @@ export const MOCK_RECIPES = [
       'Garnish with chopped fresh parsley before serving.',
     ],
     image: 'image10.jpg',
+    time: '35min'
   },
 ];

@@ -17,8 +17,8 @@ mat-card-header {
 }
 
 mat-form-field {
-    width: 100%; /* Full width */
-    margin-bottom: 16px; /* Space between fields */
+    width: 80%; /* Full width */
+   
   }
   
   /* Target the inner wrapper of the mat-form-field to remove unwanted padding */
@@ -39,9 +39,22 @@ mat-form-field {
     align-items: center; /* Center content vertically */
   }
   
+  .mat-mdc-form-fiels-subscript-wrapper {
+    height: 0;
+  }
   mat-card-actions {
     justify-content: space-evenly;
   }
+
+  mat-list-item {
+    border: 1px dotted;
+    border-radius: 20px;
+    border-color: var(--mat-divider-color);
+    width: fit-content;
+    margin-bottom: 5px;
+    background-color: white;
+  }
+
   h3 {
     text-align: center;
     font-weight: bold;
@@ -58,33 +71,40 @@ mat-form-field {
   }
   
   /* Flex settings for list items to ensure alignment and spacing */
-  .editableItems {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px; /* Space between list items */
-    min-height: 85px;
-  }
+ 
+
+
+   .editableItems {
+ min-height: 85px;
+    width: 60%;
+    text-align: center;
+    margin:auto
+   }
   
+
+
   /* Space between the input and button */
   button.mat-icon-button {
     margin-left: 8px; 
   }
 
-  .edit-button {
-        background-color: #00D395 ;
-        color: #06285D;
+  .edit-button, .save-button {
+        background-color: #00D395 !important;
+        color: #06285D !important;
       }
   
-  .save-button {
-    background-color: #00D395 ;
-    color: #06285D;
-  }
+
+.cancel-button {
+    background-color: #06285D !important;
+    color: #fafafa !important;
+}
+ 
   @media (max-width: 768px) {
     .editmode {
         width: 500px
     }
     .mat-card-first {
-        width: 500px;
+        width: 550px;
     }
   }
   

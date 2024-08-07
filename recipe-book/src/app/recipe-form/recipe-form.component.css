@@ -127,7 +127,7 @@ p {
 }
 @media (min-width: 1025px) and (max-width: 1440px) {
   mat-card {
-    max-width: 60%;
+    max-width: 50%;
     padding: 2%;
   }
 
@@ -147,7 +147,7 @@ p {
 
 @media (min-width: 1441px) {
   mat-card {
-    max-width: 50%;
+    max-width: 30%;
     padding: 2%;
   }
 

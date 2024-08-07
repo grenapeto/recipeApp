@@ -43,7 +43,7 @@
         <h3>Ingredients:</h3>
         <mat-list>
           <mat-list-item *ngFor="let ingredient of recipe?.ingredients; let i = index" class="editableItems">
-            <mat-form-field class="full-width">
+            <mat-form-field>
               <mat-label>Ingredient {{ i + 1 }}</mat-label>
               <input matInput [(ngModel)]="recipe.ingredients[i]" placeholder="Ingredient" />
             </mat-form-field>
@@ -59,7 +59,7 @@
         <h3>Instructions:</h3>
         <mat-list>
           <mat-list-item *ngFor="let instruction of recipe?.instructions; let i = index" class="editableItems">
-            <mat-form-field class="full-width">
+            <mat-form-field>
               <mat-label>Instruction {{ i + 1 }}</mat-label>
               <input matInput [(ngModel)]="recipe.instructions[i]" placeholder="Instruction" />
             </mat-form-field>
@@ -74,7 +74,7 @@
       
         <mat-card-actions>
           <button mat-raised-button class="save-button" (click)="saveChanges()">Save</button>
-          <button mat-raised-button color="accent" (click)="cancelChanges()">Cancel</button>
+          <button mat-raised-button class="cancel-button" (click)="cancelChanges()">Cancel</button>
 
         </mat-card-actions>
     </mat-card>

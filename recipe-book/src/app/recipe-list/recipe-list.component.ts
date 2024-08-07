@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { RecipeDetailComponent } from '../recipe-detail/recipe-detail.component';
 import { DetailsComponent } from '../details/details.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-recipe-list',
@@ -14,7 +15,8 @@ import { DetailsComponent } from '../details/details.component';
     CommonModule, 
     MatCardModule, 
     RecipeDetailComponent,
-    DetailsComponent
+    DetailsComponent,
+    MatIconModule
   ],
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'] 

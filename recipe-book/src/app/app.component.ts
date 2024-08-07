@@ -9,7 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatIconModule,
     MatToolbarModule, HttpClientModule,
-    RouterModule
+    RouterModule,
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

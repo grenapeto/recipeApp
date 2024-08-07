@@ -1,0 +1,15 @@
+.footer {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    color: #06285D;
+    height: 56px;
+    font-size: 14px;
+    flex-shrink: 0; /* Prevent shrinking */
+    background-color: #fafafa; /* Match background */
+  }
+  @media (max-width: 600px) {
+    .footer {
+      height: 48px;
+    }
+  }

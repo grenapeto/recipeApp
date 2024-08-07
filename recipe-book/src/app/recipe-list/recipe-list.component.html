@@ -1,8 +1,9 @@
  <div class="recipes-container">
-  <mat-card *ngFor="let recipe of recipes" class="recipe-card">
+  <mat-card *ngFor="let recipe of recipes" class="recipe-card wiggle-animation">
     <mat-card-header>
       <mat-card-title>{{ recipe.name }}</mat-card-title>
     </mat-card-header>
+    <div class="duration"><mat-icon class="icon">query_builder</mat-icon>{{ recipe.time}}</div>
     <img mat-card-image [src]="'../../assets/' + recipe.image" alt="{{ recipe.name }}">
     <div class="container">
       <div class="row">

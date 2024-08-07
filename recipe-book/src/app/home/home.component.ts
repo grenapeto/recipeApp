@@ -4,7 +4,7 @@ import { RecipeDetailComponent } from '../recipe-detail/recipe-detail.component'
 import { RecipeFormComponent } from '../recipe-form/recipe-form.component';
 import { RouterModule } from '@angular/router';
 import { MatButton } from '@angular/material/button';
-
+import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,6 +12,7 @@ import { MatButton } from '@angular/material/button';
     RecipeListComponent, 
     RecipeDetailComponent, 
     RecipeFormComponent, 
+    HeaderComponent,
     RouterModule,
     MatButton
 ],
