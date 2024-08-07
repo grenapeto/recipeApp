@@ -1,4 +1,21 @@
 /* Ensure mat-form-field takes full width and has a consistent appearance */
+.mat-card-first {
+    width: fit-content;
+    margin: 5% auto;
+    color: #06285D;
+    background-color: #fafafa;
+}
+
+.mat-card-second {
+    width: 100%;
+}
+.editmode {
+    width: 800px;
+}
+mat-card-header {
+    justify-content: space-between;
+}
+
 mat-form-field {
     width: 100%; /* Full width */
     margin-bottom: 16px; /* Space between fields */
@@ -22,6 +39,14 @@ mat-form-field {
     align-items: center; /* Center content vertically */
   }
   
+  mat-card-actions {
+    justify-content: space-evenly;
+  }
+  h3 {
+    text-align: center;
+    font-weight: bold;
+    margin: 3%;
+  }
   /* Apply height settings directly to input elements */
   .mat-input-element {
     height: auto; /* Auto height allows natural adjustment */
@@ -43,5 +68,32 @@ mat-form-field {
   /* Space between the input and button */
   button.mat-icon-button {
     margin-left: 8px; 
+  }
+
+  .edit-button {
+        background-color: #00D395 ;
+        color: #06285D;
+      }
+  
+  .save-button {
+    background-color: #00D395 ;
+    color: #06285D;
+  }
+  @media (max-width: 768px) {
+    .editmode {
+        width: 500px
+    }
+    .mat-card-first {
+        width: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .editmode {
+        width: 400px;
+    }
+    .mat-card-first {
+        width: 400px;
+    }
   }
   

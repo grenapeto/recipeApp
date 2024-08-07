@@ -1,14 +1,21 @@
+
 <mat-toolbar>
-    <div class="logo">
+  <div class="logo">
     <a class="navbar-brand" href="#"><img src="../assets/food-logo.png" alt="food-logo"></a>
   </div>
-<div class="items">
+  <div class="items">
     <button mat-button routerLink="">Home</button>
     <button mat-button routerLink="add-recipe">Add Recipe</button>
     <button mat-button routerLink="recipe-list">Recipe List</button>
   </div>
 </mat-toolbar>
+
+<!-- Main content wrapper that expands to fill available space -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer is outside the main content area -->
 <mat-toolbar class="footer">
   <span>®Enjoy your food!</span>
 </mat-toolbar>
-<router-outlet></router-outlet>

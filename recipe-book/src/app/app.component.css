@@ -1,12 +1,10 @@
-.mat-mdc-dialog-container {
-  border-radius: 5%;
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-a {
-  color: #06285D;
-  font-weight: 600;
-  font-size: large;
-}
 .mat-toolbar {
   display: flex;
   justify-content: space-between; 
@@ -28,17 +26,26 @@ button {
   margin: 0 8px;
   color: #06285D !important;
 }
+
+/* Main content area should take available space, pushing footer down */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 56px; /* Ensures space for the footer */
+}
+
+/* Adjustments to the footer */
 .footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   text-align: center;
   justify-content: center;
   color: #06285D;
-  height: 56px; 
+  height: 56px;
   font-size: 14px;
+  flex-shrink: 0; /* Prevent shrinking */
+  background-color: #fafafa; /* Match background */
 }
-
 @media (max-width: 600px) {
   .footer {
     height: 48px;

@@ -1,8 +1,8 @@
-<mat-card>
+<mat-card class="mat-card-first">
   <mat-card-header>
     <mat-card-title class="header-left">{{ recipe?.name }}</mat-card-title>
     <mat-card-actions class="header-right">
-      <button mat-raised-button *ngIf="!editMode" (click)="toggleEditMode()">
+      <button mat-raised-button *ngIf="!editMode" class="edit-button" (click)="toggleEditMode()">
         Edit
       </button>
     </mat-card-actions>
@@ -21,7 +21,7 @@
           {{ ingredient }}
         </mat-list-item>
       </mat-list>
-
+      <mat-divider></mat-divider>
       <h3>Instructions:</h3>
       <mat-list role="list" class="details">
         <mat-list-item
@@ -33,7 +33,13 @@
       </mat-list>
     </ng-container>
 
-    <ng-template #editTemplate>
+    </mat-card-content>
+    </mat-card>
+    <mat-card class="mat-card-second">
+        <mat-card-content>
+
+    <ng-template #editTemplate >
+        <mat-card class="editmode">
         <h3>Ingredients:</h3>
         <mat-list>
           <mat-list-item *ngFor="let ingredient of recipe?.ingredients; let i = index" class="editableItems">
@@ -67,8 +73,11 @@
         </mat-list>
       
         <mat-card-actions>
-          <button mat-raised-button color="accent" (click)="saveChanges()">Save</button>
+          <button mat-raised-button class="save-button" (click)="saveChanges()">Save</button>
+          <button mat-raised-button color="accent" (click)="cancelChanges()">Cancel</button>
+
         </mat-card-actions>
+    </mat-card>
       </ng-template>
       
   </mat-card-content>

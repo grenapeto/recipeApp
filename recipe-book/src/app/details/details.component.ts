@@ -98,9 +98,9 @@ export class DetailsComponent implements OnInit {
     this.editMode = false;
   }
 
-  // cancelChanges() {
-  //   // Revert any unsaved changes and exit edit mode
-  //   this.getRecipeDetails(this.data.id); // Reload the recipe details
-  //   this.editMode = false;
-  // }
+  cancelChanges() {
+    // Revert any unsaved changes and exit edit mode
+    this.getRecipeDetails(this.recipe.id); // Reload the recipe details
+    this.editMode = false;
+  }
 }
