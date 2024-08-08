@@ -12,7 +12,8 @@ h1 {
     color: #06285D !important;
   }
   button {
-    background-color: #00D395 !important;
+    /* background-color: #00D395 !important; */
+    background-color: rgb(237 182 84) !important;
   }
   .home-container {
     text-align: center;

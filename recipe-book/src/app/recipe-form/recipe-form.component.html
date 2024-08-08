@@ -50,7 +50,7 @@
 
       <div formArrayName="images" class="form-section">
         <h2>Image</h2>
-        <button mat-raised-button (click)="uploader.open({ onUpdate: onComplete })">
+        <button mat-raised-button class="button-color" (click)="uploader.open({ onUpdate: onComplete })">
           Upload Image
         </button>
         <div *ngFor="let image of images.controls; let l = index" class="form-row">
@@ -64,7 +64,7 @@
           </div>
       </div>
 
-      <button mat-raised-button color="accent" type="submit">Add Recipe</button>
+      <button mat-raised-button class="add-recipe-button" type="submit">Add Recipe</button>
     </form>
   </mat-card>
 

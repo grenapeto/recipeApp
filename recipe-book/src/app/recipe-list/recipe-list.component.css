@@ -7,11 +7,14 @@ mat-icon {
 }
 
 button:hover {
-  background-color: #00D395 !important;
+  /* background-color: #00D395 !important; */
+  background-color: rgb(237 182 84) !important;
 }
 
 .btn-left {
-  background-color: #00D395 !important;
+  /* background-color: #00D395 !important; */
+  background-color: rgb(237 182 84) !important;
+
 }
 .btn-left:hover {
   background-color: #ffffff !important;
@@ -21,7 +24,9 @@ button:hover {
 }
 
 .btn-right:hover {
-  background-color: #00D395 !important;
+  /* background-color: #00D395 !important; */
+  background-color: rgb(237 182 84) !important;
+
 }
 @keyframes wiggle {
   0%, 100% {

@@ -3,10 +3,12 @@ a {
     text-decoration: none;
     color: #06285D;
     padding: 0 10px;
+    font-family: 'Oswald';
 }
 
 a:hover {
-    color: #00D395;
+    /* color: #00D395; */
+    color: rgb(237 182 84) !important;
 }
 
   nav {

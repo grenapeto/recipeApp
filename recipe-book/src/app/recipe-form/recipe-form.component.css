@@ -28,10 +28,13 @@ li {
 }
 
 h2, li, mat-card-title  {
-  color: #06285D !important;
+  /* color: #06285D !important; */
+  color: #06285D;
 }
 .button-color {
-  background-color: #00D395 !important;
+  /* background-color: #00D395 !important; */
+  background-color: rgb(237 182 84) !important;
+
 }
 
 .mat-form-field-appearance-fill .mat-form-field-label-wrapper {
@@ -64,6 +67,11 @@ p {
 
 .last-recipe {
   width: inherit;
+}
+
+.add-recipe-button {
+  background-color:  #06285D !important;
+  color: rgb(237 182 84) !important;
 }
 
 @media (max-width: 576px) {

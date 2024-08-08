@@ -89,14 +89,14 @@ mat-form-field {
   }
 
   .edit-button, .save-button {
-        background-color: #00D395 !important;
+    background-color: rgb(237 182 84) !important;
         color: #06285D !important;
       }
   
 
 .cancel-button {
     background-color: #06285D !important;
-    color: #fafafa !important;
+    color: rgb(237 182 84) !important;
 }
  
   @media (max-width: 768px) {
