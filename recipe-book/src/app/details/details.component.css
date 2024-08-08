@@ -88,7 +88,7 @@ mat-form-field {
     margin-left: 8px; 
   }
 
-  .edit-button, .save-button {
+  .edit-button, .save-button, .button-color {
     background-color: rgb(237 182 84) !important;
         color: #06285D !important;
       }
@@ -97,6 +97,10 @@ mat-form-field {
 .cancel-button {
     background-color: #06285D !important;
     color: rgb(237 182 84) !important;
+}
+
+.save-cancel-btns {
+  margin-top: 5%;
 }
  
   @media (max-width: 768px) {

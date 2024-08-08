@@ -31,12 +31,23 @@ h2, li, mat-card-title  {
   /* color: #06285D !important; */
   color: #06285D;
 }
+
+p {
+  text-align: center;
+}
+
+button {
+  margin-bottom: 5%;
+}
+
+.add-recipe-button {
+  background-color:  #06285D !important;
+  color: rgb(237 182 84) !important;
+}
 .button-color {
-  /* background-color: #00D395 !important; */
   background-color: rgb(237 182 84) !important;
 
 }
-
 .mat-form-field-appearance-fill .mat-form-field-label-wrapper {
   top: 0;
   transform: translateY(0.5em) scale(0.75);
@@ -57,21 +68,12 @@ h2, li, mat-card-title  {
   object-fit: cover;
 }
 
-button {
-  margin-bottom: 5%;
-}
-
-p {
-  text-align: center;
-}
-
 .last-recipe {
   width: inherit;
 }
 
-.add-recipe-button {
-  background-color:  #06285D !important;
-  color: rgb(237 182 84) !important;
+.error {
+  margin: -20px 0;
 }
 
 @media (max-width: 576px) {

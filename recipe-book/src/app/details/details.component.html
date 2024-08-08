@@ -51,7 +51,7 @@
               <mat-icon>remove_circle</mat-icon>
             </button>
           </mat-list-item>
-          <button mat-raised-button (click)="addIngredient()">
+          <button mat-raised-button class="button-color" (click)="addIngredient()">
             <mat-icon>add_circle</mat-icon> Add Ingredient
           </button>
         </mat-list>
@@ -67,12 +67,12 @@
               <mat-icon>remove_circle</mat-icon>
             </button>
           </mat-list-item>
-          <button mat-raised-button (click)="addInstruction()">
+          <button mat-raised-button class="button-color" (click)="addInstruction()">
             <mat-icon>add_circle</mat-icon> Add Instruction
           </button>
         </mat-list>
       
-        <mat-card-actions>
+        <mat-card-actions class="save-cancel-btns">
           <button mat-raised-button class="save-button" (click)="saveChanges()">Save</button>
           <button mat-raised-button class="cancel-button" (click)="cancelChanges()">Cancel</button>
 
