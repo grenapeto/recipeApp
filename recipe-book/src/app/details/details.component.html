@@ -15,7 +15,7 @@
       <h3>Ingredients:</h3>
       <mat-list role="list" class="details">
         <mat-list-item
-          role="listitem"
+          role="listitem" class="no-edit-item"
           *ngFor="let ingredient of recipe?.ingredients"
         >
           {{ ingredient }}
@@ -25,7 +25,7 @@
       <h3>Instructions:</h3>
       <mat-list role="list" class="details">
         <mat-list-item
-          role="listitem"
+          role="listitem" class="no-edit-item"
           *ngFor="let instruction of recipe?.instructions"
         >
           {{ instruction }}

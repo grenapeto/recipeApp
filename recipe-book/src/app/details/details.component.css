@@ -46,15 +46,23 @@ mat-form-field {
     justify-content: space-evenly;
   }
 
-  mat-list-item {
+  /* mat-list-item {
     border: 1px dotted;
     border-radius: 20px;
     border-color: var(--mat-divider-color);
     width: fit-content;
     margin-bottom: 5px;
     background-color: white;
-  }
+  } */
 
+.no-edit-item {
+  border: 1px dotted;
+  border-radius: 20px;
+  border-color: var(--mat-divider-color);
+  width: fit-content;
+  margin-bottom: 5px;
+  background-color: white;
+}
   h3 {
     text-align: center;
     font-weight: bold;
