@@ -1,4 +1,4 @@
- <div class="recipes-container">
+ <!-- <div class="recipes-container">
   <mat-card *ngFor="let recipe of recipes" class="recipe-card wiggle-animation">
     <mat-card-header>
       <mat-card-title>{{ recipe.name }}</mat-card-title>
@@ -12,6 +12,25 @@
       </div>
     </div>
   </mat-card>
+</div>  -->
+<!-- 
+NOWE Z API -->
+
+
+<div class="recipes-container">
+  @for (post of data; track post.foodId) {
+  <mat-card class="recipe-card wiggle-animation">
+    <mat-card-header>
+      <mat-card-title>{{ post.label }}</mat-card-title>
+    </mat-card-header>
+    <div class="duration"><mat-icon class="icon">query_builder</mat-icon>{{post.totalTime}}</div>
+    <img mat-card-image src={{post.image}} alt="{{ post.label }}">
+    <div class="container">
+      <div class="row">
+        <app-recipe-detail [recipeId]="post.foodId" class="btns btn-left"></app-recipe-detail>
+        <button mat-button (click)="deleteRecipe(post.foodId)" class="btns btn-right">Delete Recipe</button>
+      </div>
+    </div>
+  </mat-card>
+}
 </div> 
-
-
