@@ -1,17 +1,18 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { RecipeService } from '../recipe.service';
-import { MatCard } from '@angular/material/card';
-import { ActivatedRoute, RouterModule } from '@angular/router';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+
+ import { CommonModule } from '@angular/common';
+ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+ import { FormsModule } from '@angular/forms';
+ import { MatButtonModule } from '@angular/material/button';
+ import { MatCardModule } from '@angular/material/card';
+ import { MatDialogModule } from '@angular/material/dialog';
+ import { MatDividerModule } from '@angular/material/divider';
+ import { MatIconModule } from '@angular/material/icon';
+ import { MatInputModule } from '@angular/material/input';
+ import { MatListModule } from '@angular/material/list';
+ import { RecipeService } from '../recipe.service';
+ import { MatCard } from '@angular/material/card';
+ import { ActivatedRoute, RouterModule } from '@angular/router';
+ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-details',
@@ -64,7 +65,6 @@ export class DetailsComponent implements OnInit {
       }
     );
   }
-
   toggleEditMode() {
     this.editMode = !this.editMode; // Toggle editMode between true and false
   }
@@ -106,3 +106,6 @@ export class DetailsComponent implements OnInit {
     this.editMode = false;
   }
 }
+
+
+

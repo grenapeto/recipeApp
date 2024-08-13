@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { RecipeService } from './recipe.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -28,6 +29,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     FooterComponent
   ],
+  providers: [RecipeService],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

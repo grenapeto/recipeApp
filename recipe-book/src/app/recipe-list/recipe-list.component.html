@@ -18,7 +18,8 @@ NOWE Z API -->
 
 
 <div class="recipes-container">
-  @for (post of data; track post.foodId) {
+  @for (post of data; track post.foodId) 
+  {
   <mat-card class="recipe-card wiggle-animation">
     <mat-card-header>
       <mat-card-title>{{ post.label }}</mat-card-title>
@@ -27,7 +28,7 @@ NOWE Z API -->
     <img mat-card-image src={{post.image}} alt="{{ post.label }}">
     <div class="container">
       <div class="row">
-        <app-recipe-detail [recipeId]="post.foodId" class="btns btn-left"></app-recipe-detail>
+        <app-recipe-detail [recipeId]="post.id" class="btns btn-left"></app-recipe-detail>
         <button mat-button (click)="deleteRecipe(post.foodId)" class="btns btn-right">Delete Recipe</button>
       </div>
     </div>

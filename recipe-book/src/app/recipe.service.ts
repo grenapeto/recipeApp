@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MOCK_RECIPES } from './mock-recipes'; // Ensure this is an array of recipe objects
-
+import { map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
-  private recipes = MOCK_RECIPES || []; // Ensure an empty array if undefined
+  private recipes = MOCK_RECIPES || []; 
 
   constructor() {}
 
@@ -68,3 +69,4 @@ export class RecipeService {
     return of({ id });
   }
 }
+
