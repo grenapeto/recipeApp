@@ -53,15 +53,8 @@ this.data = data.hits.map((hit: any) => hit.recipe);
     });
   }
 
-  deleteRecipe(id: any) {
-    this.recipeService.deleteRecipe(id).subscribe(() => {
-      this.recipes = this.recipes.filter(recipe => recipe.id !== id);
-    });
+  deleteRecipe(uri: string) {
+    this.data = this.data.filter(recipe => recipe.uri !== uri);
   }
 
-  // deleteRecipe(id: string) {
-  //   this.data = this.data.filter(post => post.foodId !== id);  // Update for the new API data structure
-  
-  //   // If you still want to delete from the local `recipes` array as well
-  //   this.recipes = this.recipes.filter(recipe => recipe.id !== id);}
 }
