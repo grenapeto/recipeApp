@@ -29,7 +29,7 @@ const routeConfig: Routes = [
     title: 'Recipe List page',
   },
   {
-    path: 'details/:uri',
+    path: 'details/:id',
     component: DetailsComponent,
     title: 'Details page',
   },

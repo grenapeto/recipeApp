@@ -30,7 +30,7 @@ import { Uploader, UploadWidgetConfig, UploadWidgetResult } from 'uploader';
 })
 export class RecipeFormComponent implements OnInit, OnDestroy {
   uploader = Uploader({
-    apiKey: 'free', // Use a production API key for deployment
+    apiKey: 'free', 
   });
   options: UploadWidgetConfig = {
     multi: false,
@@ -54,10 +54,8 @@ export class RecipeFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // Add passive scroll listener
     window.addEventListener('scroll', this.handleScroll, { passive: true });
 
-    // Load the last added recipe from localStorage on initialization
     const savedRecipe = localStorage.getItem('lastAddedRecipe');
     if (savedRecipe) {
       this.lastAddedRecipe = JSON.parse(savedRecipe);
@@ -65,7 +63,6 @@ export class RecipeFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Remove scroll listener
     window.removeEventListener('scroll', this.handleScroll);
   }
 
@@ -115,17 +112,16 @@ export class RecipeFormComponent implements OnInit, OnDestroy {
         console.log('Recipe added:', result);
         this.lastAddedRecipe = result;
 
-        // Save the last added recipe to localStorage
         localStorage.setItem('lastAddedRecipe', JSON.stringify(this.lastAddedRecipe));
 
         this.resetFormArrays();
         this.recipeForm.reset();
-        this.addIngredient();  // Ensure at least one ingredient field
-        this.addInstruction(); // Ensure at least one instruction field
+        this.addIngredient();  
+        this.addInstruction(); 
       });
     } else {
       console.error('Form is invalid');
-      this.recipeForm.markAllAsTouched(); // Mark all fields as touched to show errors
+      this.recipeForm.markAllAsTouched(); 
     }
   }
 

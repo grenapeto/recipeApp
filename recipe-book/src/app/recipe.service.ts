@@ -59,7 +59,7 @@
 // }
 
 import { inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { MOCK_RECIPES } from './mock-recipes'; 
 import { map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -92,17 +92,13 @@ constructor() {}
     }
   }
 
-  // Get recipe by URI
-  getRecipeByUri(uri: string): Observable<any> {
-    const recipe = this.recipes.find((r) => r.uri === uri);
-    return of(recipe);
-  }
-
+  
     // Get recipe by ID
-    getRecipeById(id: string): Observable<any> {
-      const recipe = this.recipes.find((r) => r.id === id);
+    getRecipeById(href: string): Observable<any> {
+      const recipe = this.recipes.find((r) => r._links?.self?.href === href);
       return of(recipe);
     }
+
 
   // Add a new recipe (note: API might not support POST, this is just for local addition)
   addRecipe(recipe: any): Observable<any> {

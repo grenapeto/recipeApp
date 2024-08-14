@@ -10,7 +10,7 @@
     <img mat-card-image [src]="post.image" alt="{{ post.label }}">
     <div class="container">
       <div class="row">
-        <app-recipe-detail [recipeUri]="post.uri" class="btns btn-left"></app-recipe-detail>
+        <app-recipe-detail [recipeId]="post.uri" class="btns btn-left"></app-recipe-detail>
         <button mat-button (click)="deleteRecipe(post.uri)" class="btns btn-right">Delete Recipe</button>
       </div>
     </div>

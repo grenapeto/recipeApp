@@ -63,26 +63,16 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-detail.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecipeDetailComponent implements OnInit {
-  @Input() recipeUri!: string;
+export class RecipeDetailComponent {
+  @Input() recipeId!: string;
 
-  recipes: any[] = [];
-  httpClient = inject(HttpClient); 
-  data: any[] = [];
+  // recipes: any[] = [];
+  // httpClient = inject(HttpClient); 
+ 
 
-  constructor(private recipeService: RecipeService) {}
+  // constructor(private recipeService: RecipeService) {}
 
-  ngOnInit(): void {
-    this.fetchData();
-  }
-
-  fetchData() {
-    this.httpClient.get('https://api.edamam.com/api/recipes/v2&id={id}?type=public&app_id=d78a8854&app_key=%20e8e08c0ff7ca76b4c80dccce32b4f755%09&cuisineType=American&cuisineType=Asian&cuisineType=British&cuisineType=Central%20Europe&cuisineType=Chinese&cuisineType=Eastern%20Europe&cuisineType=French&cuisineType=Indian&cuisineType=Italian&cuisineType=Japanese&cuisineType=Kosher&cuisineType=Mediterranean&cuisineType=Mexican&cuisineType=Middle%20Eastern&cuisineType=Nordic&cuisineType=South%20American&cuisineType=South%20East%20Asian&mealType=Breakfast&mealType=Dinner&mealType=Lunch&mealType=Snack&dishType=Biscuits%20and%20cookies&dishType=Bread&dishType=Cereals&dishType=Condiments%20and%20sauces&dishType=Desserts&dishType=Drinks&dishType=Main%20course&dishType=Pancake&dishType=Sandwiches&dishType=Side%20dish&dishType=Soup&dishType=Starter&dishType=Sweets&imageSize=REGULAR&imageSize=SMALL{uri}')
-      .subscribe((data: any) => {
-        console.log(data);
-        this.data = data.hits.map((hit: any) => hit.recipe);
-      });
-  }
+  
 
  
 }

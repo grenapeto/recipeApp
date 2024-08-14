@@ -145,7 +145,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 export class DetailsComponent implements OnInit {
   recipe: any = null; 
   editMode: boolean = false; 
-  uri: string | null = null; 
+  id: string | null = null; 
 
   constructor(
     private recipeService: RecipeService,
@@ -154,16 +154,16 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      const uriParam = params.get('uri');
-      this.uri = uriParam; 
-      if (this.uri !== null) {
-        this.getRecipeDetails(this.uri);
+      const idParam = params.get('id');
+      this.id = idParam; 
+      if (this.id !== null) {
+        this.getRecipeDetails(this.id);
       }
     });
   }
 
-  getRecipeDetails(uri: string) {
-    this.recipeService.getRecipeByUri(uri).subscribe(
+  getRecipeDetails(id: string) {
+    this.recipeService.getRecipeById(id).subscribe(
       (recipe) => {
         console.log('Fetched Recipe:', recipe);
         this.recipe = { ...recipe };
@@ -213,8 +213,8 @@ export class DetailsComponent implements OnInit {
   }
 
   cancelChanges() {
-    if (this.uri) {
-      this.getRecipeDetails(this.uri); 
+    if (this.id) {
+      this.getRecipeDetails(this.id); 
     }
     this.editMode = false;
   }
