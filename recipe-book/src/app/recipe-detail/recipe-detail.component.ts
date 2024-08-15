@@ -63,9 +63,13 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-detail.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecipeDetailComponent {
+export class RecipeDetailComponent implements OnInit {
   @Input() recipeId!: string;
-
+  
+  ngOnInit(): void {
+    console.log(this.recipeId);
+  }
+  
   // recipes: any[] = [];
   // httpClient = inject(HttpClient); 
  

@@ -2,16 +2,16 @@
 <div class="recipes-container">
   <mat-card *ngFor="let post of data" class="recipe-card wiggle-animation">
     <mat-card-header>
-      <mat-card-title>{{ post.label }}</mat-card-title>
+      <mat-card-title>{{ post.recipe.label }}</mat-card-title>
     </mat-card-header>
     <div class="duration">
-      <mat-icon class="icon">query_builder</mat-icon>{{ post.totalTime }} mins
+      <mat-icon class="icon">query_builder</mat-icon>{{ post.recipe.totalTime }} mins
     </div>
-    <img mat-card-image [src]="post.image" alt="{{ post.label }}">
+    <img mat-card-image [src]="post.recipe.image" alt="{{ post.recipe.label }}">
     <div class="container">
       <div class="row">
-        <app-recipe-detail [recipeId]="post.uri" class="btns btn-left"></app-recipe-detail>
-        <button mat-button (click)="deleteRecipe(post.uri)" class="btns btn-right">Delete Recipe</button>
+        <app-recipe-detail [recipeId]="post._links.self.href" class="btns btn-left"></app-recipe-detail>
+        <button mat-button (click)="deleteRecipe(post.recipe.uri)" class="btns btn-right">Delete Recipe</button>
       </div>
     </div>
   </mat-card>

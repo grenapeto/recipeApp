@@ -69,6 +69,8 @@ import { HttpClient } from '@angular/common/http';
 export class RecipeService {
   
   private recipes: any[] = [];
+  recipe: any;
+
 httpClient = inject(HttpClient); //nowe
 private apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&app_id=d78a8854&app_key=%20e8e08c0ff7ca76b4c80dccce32b4f755';
 constructor() {}
@@ -95,11 +97,9 @@ constructor() {}
   
     // Get recipe by ID
     getRecipeById(href: string): Observable<any> {
-      const recipe = this.recipes.find((r) => r._links?.self?.href === href);
-      return of(recipe);
+      return this.httpClient.get(href);
     }
-
-
+    
   // Add a new recipe (note: API might not support POST, this is just for local addition)
   addRecipe(recipe: any): Observable<any> {
     // Generate a unique ID by using URI as the identifier.

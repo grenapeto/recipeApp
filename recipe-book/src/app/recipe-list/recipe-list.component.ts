@@ -36,13 +36,13 @@ export class RecipeListComponent implements OnInit {
   fetchData() {
     this.httpClient
       .get(
-        'https://api.edamam.com/api/recipes/v2?type=public&app_id=d78a8854&app_key=%20e8e08c0ff7ca76b4c80dccce32b4f755%09&cuisineType=American&cuisineType=Asian&cuisineType=British&cuisineType=Central%20Europe&cuisineType=Chinese&cuisineType=Eastern%20Europe&cuisineType=French&cuisineType=Indian&cuisineType=Italian&cuisineType=Japanese&cuisineType=Kosher&cuisineType=Mediterranean&cuisineType=Mexican&cuisineType=Middle%20Eastern&cuisineType=Nordic&cuisineType=South%20American&cuisineType=South%20East%20Asian&mealType=Breakfast&mealType=Dinner&mealType=Lunch&mealType=Snack&dishType=Biscuits%20and%20cookies&dishType=Bread&dishType=Cereals&dishType=Condiments%20and%20sauces&dishType=Desserts&dishType=Drinks&dishType=Main%20course&dishType=Pancake&dishType=Sandwiches&dishType=Side%20dish&dishType=Soup&dishType=Starter&dishType=Sweets&imageSize=REGULAR&imageSize=SMALL'
+        'https://api.edamam.com/api/recipes/v2?type=public&app_id=d78a8854&app_key=%20e8e08c0ff7ca76b4c80dccce32b4f755%09&cuisineType=American&cuisineType=Asian&cuisineType=British&cuisineType=Central%20Europe&cuisineType=Chinese&cuisineType=Eastern%20Europe&cuisineType=French&cuisineType=Indian&cuisineType=Italian&cuisineType=Japanese&cuisineType=Kosher&cuisineType=Mediterranean&cuisineType=Mexican&cuisineType=Middle%20Eastern&cuisineType=Nordic&cuisineType=South%20American&cuisineType=South%20East%20Asian&mealType=Breakfast&mealType=Dinner&mealType=Lunch&mealType=Snack&dishType=Biscuits%20and%20cookies&dishType=Bread&dishType=Cereals&&dishType=Desserts&dishType=Main%20course&dishType=Pancake&dishType=Sandwiches&dishType=Side%20dish&dishType=Soup&dishType=Sweets&imageSize=REGULAR&imageSize=SMALL'
       )
       .subscribe((data: any) => {
         console.log(data);
-        this.data = data.hits.map((hit: any) => hit.recipe);
-      }); ///nowe
-  }
+        this.data = data.hits;
+      }); 
+    }
 
   loadRecipes() {
     this.recipeService.getRecipes().subscribe((data) => {
@@ -51,6 +51,6 @@ export class RecipeListComponent implements OnInit {
   }
 
   deleteRecipe(uri: string) {
-    this.data = this.data.filter((recipe) => recipe.uri !== uri);
+    this.data = this.data.filter((recipe) => recipe.recipe.uri !== uri);
   }
 }

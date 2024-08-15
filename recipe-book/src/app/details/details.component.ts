@@ -157,6 +157,7 @@ export class DetailsComponent implements OnInit {
       const idParam = params.get('id');
       this.id = idParam; 
       if (this.id !== null) {
+        console.log(this.id);
         this.getRecipeDetails(this.id);
       }
     });
@@ -165,8 +166,8 @@ export class DetailsComponent implements OnInit {
   getRecipeDetails(id: string) {
     this.recipeService.getRecipeById(id).subscribe(
       (recipe) => {
-        console.log('Fetched Recipe:', recipe);
-        this.recipe = { ...recipe };
+        this.recipe = recipe;
+        console.log('Fetched Recipe:', this.recipe);
       },
       (error: any) => {
         console.log('Error fetching recipe details: ', error);
@@ -180,13 +181,13 @@ export class DetailsComponent implements OnInit {
 
   addIngredient() {
     if (this.recipe) {
-      this.recipe.ingredientLines.push('');
+      this.recipe.recipe.ingredientLines.push('');
     }
   }
 
   removeIngredient(index: number) {
     if (this.recipe) {
-      this.recipe.ingredientLines.splice(index, 1);
+      this.recipe.recipe.ingredientLines.splice(index, 1); //ingredientLines
     }
   }
 
