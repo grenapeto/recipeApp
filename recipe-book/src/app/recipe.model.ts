@@ -8,5 +8,14 @@ export interface Recipe {
     instructions: string[];
     totalTime: number;
     uri: string;
-    // Add any other properties that a recipe might have
+
+    ingredientLines: string[];
+    totalNutrients: { [key: string]: Nutrient };
   }
+
+  export interface Nutrient {
+    label: string;
+    quantity: number;
+    unit: string;
+  }
+  

@@ -24,12 +24,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeListComponent implements OnInit {
   recipes: any[] = [];
-  httpClient = inject(HttpClient); //nowe
+  httpClient = inject(HttpClient); 
   data: any[] = [];
   constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.fetchData(); //nowe
+    this.fetchData(); 
     this.loadRecipes();
   }
 

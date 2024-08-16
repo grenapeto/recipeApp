@@ -1,5 +1,37 @@
-/* Ensure mat-form-field takes full width and has a consistent appearance */
-.mat-card-first {
+mat-card-header {
+    justify-content: space-between;
+}
+
+mat-form-field {
+    width: 80%; 
+  }
+    mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0 !important; 
+  }
+  
+  mat-form-field .mat-form-field-flex {
+    height: auto;
+  }
+  
+  mat-form-field .mat-form-field-infix {
+    padding: 0 8px; 
+    min-height: 48px; 
+    display: flex;
+    align-items: center;
+  }
+  mat-card-actions {
+    justify-content: space-evenly;
+  }
+
+  h3 {
+    text-align: center;
+    font-weight: bold;
+    margin: 3%;
+  }
+  .mat-mdc-form-fiels-subscript-wrapper {
+    height: 0;
+  }
+  .mat-card-first {
     width: fit-content;
     margin: 5% auto;
     color: #06285D;
@@ -12,48 +44,6 @@
 .editmode {
     width: 800px;
 }
-mat-card-header {
-    justify-content: space-between;
-}
-
-mat-form-field {
-    width: 80%; /* Full width */
-   
-  }
-  
-  /* Target the inner wrapper of the mat-form-field to remove unwanted padding */
-  mat-form-field .mat-form-field-wrapper {
-    padding-bottom: 0 !important; /* Remove extra bottom padding */
-  }
-  
-  /* Control the flexbox container within the mat-form-field */
-  mat-form-field .mat-form-field-flex {
-    height: auto; /* Allow height to adjust */
-  }
-  
-  /* Set specific height and padding for the input container */
-  mat-form-field .mat-form-field-infix {
-    padding: 0 8px; /* Horizontal padding, zero vertical padding */
-    min-height: 48px; /* Minimum height for input container */
-    display: flex;
-    align-items: center; /* Center content vertically */
-  }
-  
-  .mat-mdc-form-fiels-subscript-wrapper {
-    height: 0;
-  }
-  mat-card-actions {
-    justify-content: space-evenly;
-  }
-
-  /* mat-list-item {
-    border: 1px dotted;
-    border-radius: 20px;
-    border-color: var(--mat-divider-color);
-    width: fit-content;
-    margin-bottom: 5px;
-    background-color: white;
-  } */
 
 .no-edit-item {
   border: 1px dotted;
@@ -63,24 +53,41 @@ mat-form-field {
   margin-bottom: 5px;
   background-color: white;
 }
-  h3 {
-    text-align: center;
-    font-weight: bold;
-    margin: 3%;
-  }
-  /* Apply height settings directly to input elements */
+
+
+.nutrients-container {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+.nutrients-container mat-list {
+  flex: 1; 
+  min-width: 45%;
+}
   .mat-input-element {
-    height: auto; /* Auto height allows natural adjustment */
-    min-height: 36px; /* Minimum height for input fields */
-    padding: 8px; /* Padding inside the input for better text visibility */
-    box-sizing: border-box; /* Include padding and borders in total element size */
-    font-size: 16px; /* Adjust font size if needed */
-    line-height: 1.5; /* Adjust line height for better text readability */
+    height: auto; 
+    min-height: 36px; 
+    padding: 8px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+    line-height: 1.5; 
+  }
+   
+  .meal-cuisine-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px;
+    margin: 0 5%; 
+    flex-wrap: wrap; 
   }
   
-  /* Flex settings for list items to ensure alignment and spacing */
- 
-
+  .meal-cuisine-container mat-list {
+    flex: 1; 
+    min-width: 45%; 
+  }
+  
 
    .editableItems {
  min-height: 85px;
@@ -89,9 +96,6 @@ mat-form-field {
     margin:auto
    }
   
-
-
-  /* Space between the input and button */
   button.mat-icon-button {
     margin-left: 8px; 
   }
@@ -118,6 +122,22 @@ mat-form-field {
     .mat-card-first {
         width: 550px;
     }
+
+    .meal-cuisine-container {
+      flex-direction: column; 
+    }
+  
+    .meal-cuisine-container mat-list {
+      min-width: 100%; 
+    }
+    
+    .nutrients-container {
+      flex-direction: column; 
+    }
+  
+    .nutrients-container mat-list {
+      min-width: 100%; 
+    }
   }
   
   @media (max-width: 480px) {
@@ -127,5 +147,33 @@ mat-form-field {
     .mat-card-first {
         width: 400px;
     }
+
+    .meal-cuisine-container {
+      flex-direction: column; 
+      gap: 10px; 
+      width: 100%;
+    }
+  
+    .meal-cuisine-container mat-list {
+      width: 100%; 
+    }
+  
+    .nutrients-container {
+      flex-direction: column; 
+      gap: 10px; 
+      width: 100%; 
+    }
+  
+    .nutrients-container mat-list {
+      width: 100%;
+    }
+  
+    .no-edit-item {
+      width: 100%; 
+      margin-bottom: 10px; 
+    }
   }
   
+
+
+
