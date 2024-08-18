@@ -16,27 +16,26 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   selector: 'app-details',
   standalone: true,
   imports: [
-    MatDialogModule, 
-    MatButtonModule, 
-    MatCardModule, 
-    MatListModule, 
-    MatDividerModule, 
-    MatInputModule, 
-    MatIconModule, 
-    CommonModule, 
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+    MatDividerModule,
+    MatInputModule,
+    MatIconModule,
+    CommonModule,
     FormsModule,
     RouterModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css'], 
+  styleUrls: ['./details.component.css'],
 })
-
 export class DetailsComponent implements OnInit {
-  recipe: any = null; 
-  editMode: boolean = false; 
-  id: string | null = null; 
+  recipe: any = null;
+  editMode: boolean = false;
+  id: string | null = null;
 
   constructor(
     private recipeService: RecipeService,
@@ -46,7 +45,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       const idParam = params.get('id');
-      this.id = idParam; 
+      this.id = idParam;
       if (this.id !== null) {
         console.log(this.id);
         this.getRecipeDetails(this.id);
@@ -67,7 +66,7 @@ export class DetailsComponent implements OnInit {
   }
 
   toggleEditMode() {
-    this.editMode = !this.editMode; 
+    this.editMode = !this.editMode;
   }
 
   addIngredient() {
@@ -81,19 +80,6 @@ export class DetailsComponent implements OnInit {
       this.recipe.recipe.ingredientLines.splice(index, 1);
     }
   }
-
-  // addNutrients() {
-  //   if (this.recipe) {
-  //     this.recipe.recipe.totalNutrients.push('');
-  //   }
-  // }
-
-  // removeNutrients(index: number) {
-  //   if (this.recipe) {
-  //     this.recipe.recipe.totalNutrients.splice(index, 1);
-  //   }
-  // }
-
 
   addMealType() {
     if (this.recipe) {
@@ -128,15 +114,8 @@ export class DetailsComponent implements OnInit {
 
   cancelChanges() {
     if (this.id) {
-      this.getRecipeDetails(this.id); 
+      this.getRecipeDetails(this.id);
     }
     this.editMode = false;
   }
-
-  
-
 }
-
-
-
-

@@ -9,16 +9,14 @@ import { HeaderComponent } from '../header/header.component';
   selector: 'app-home',
   standalone: true,
   imports: [
-    RecipeListComponent, 
-    RecipeDetailComponent, 
-    RecipeFormComponent, 
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeFormComponent,
     HeaderComponent,
     RouterModule,
-    MatButton
-],
+    MatButton,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

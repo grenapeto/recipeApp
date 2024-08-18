@@ -5,11 +5,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { FormBuilder, FormGroup, FormArray, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { UploaderModule } from 'angular-uploader';
 import { Uploader, UploadWidgetConfig, UploadWidgetResult } from 'uploader';
+import { MatList, MatListItem } from '@angular/material/list';
 
 @Component({
   selector: 'app-recipe-form',
@@ -20,17 +27,19 @@ import { Uploader, UploadWidgetConfig, UploadWidgetResult } from 'uploader';
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
+    MatList,
+    MatListItem,
     ReactiveFormsModule,
     CommonModule,
     MatIcon,
-    UploaderModule
+    UploaderModule,
   ],
   templateUrl: './recipe-form.component.html',
-  styleUrls: ['./recipe-form.component.css']
+  styleUrls: ['./recipe-form.component.css'],
 })
 export class RecipeFormComponent implements OnInit, OnDestroy {
   uploader = Uploader({
-    apiKey: 'free', 
+    apiKey: 'free',
   });
   options: UploadWidgetConfig = {
     multi: false,
@@ -43,8 +52,14 @@ export class RecipeFormComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder, private recipeService: RecipeService) {
     this.recipeForm = this.fb.group({
       name: ['', Validators.required],
-      ingredients: this.fb.array([this.fb.control('', Validators.required)], Validators.required),
-      instructions: this.fb.array([this.fb.control('', Validators.required)], Validators.required),
+      ingredients: this.fb.array(
+        [this.fb.control('', Validators.required)],
+        Validators.required
+      ),
+      instructions: this.fb.array(
+        [this.fb.control('', Validators.required)],
+        Validators.required
+      ),
       images: this.fb.array([], Validators.required),
     });
 
@@ -108,20 +123,25 @@ export class RecipeFormComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     if (this.recipeForm.valid) {
-      this.recipeService.addRecipe(this.recipeForm.value).subscribe(result => {
-        console.log('Recipe added:', result);
-        this.lastAddedRecipe = result;
+      this.recipeService
+        .addRecipe(this.recipeForm.value)
+        .subscribe((result) => {
+          console.log('Recipe added:', result);
+          this.lastAddedRecipe = result;
 
-        localStorage.setItem('lastAddedRecipe', JSON.stringify(this.lastAddedRecipe));
+          localStorage.setItem(
+            'lastAddedRecipe',
+            JSON.stringify(this.lastAddedRecipe)
+          );
 
-        this.resetFormArrays();
-        this.recipeForm.reset();
-        this.addIngredient();  
-        this.addInstruction(); 
-      });
+          this.resetFormArrays();
+          this.recipeForm.reset();
+          this.addIngredient();
+          this.addInstruction();
+        });
     } else {
       console.error('Form is invalid');
-      this.recipeForm.markAllAsTouched(); 
+      this.recipeForm.markAllAsTouched();
     }
   }
 

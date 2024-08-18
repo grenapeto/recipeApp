@@ -1,48 +1,52 @@
 mat-card-header {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 mat-form-field {
-    width: 80%; 
-  }
-    mat-form-field .mat-form-field-wrapper {
-    padding-bottom: 0 !important; 
-  }
-  
-  mat-form-field .mat-form-field-flex {
-    height: auto;
-  }
-  
-  mat-form-field .mat-form-field-infix {
-    padding: 0 8px; 
-    min-height: 48px; 
-    display: flex;
-    align-items: center;
-  }
-  mat-card-actions {
-    justify-content: space-evenly;
-  }
+  width: 80%;
+}
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
 
-  h3 {
-    text-align: center;
-    font-weight: bold;
-    margin: 3%;
-  }
-  .mat-mdc-form-fiels-subscript-wrapper {
-    height: 0;
-  }
-  .mat-card-first {
-    width: fit-content;
-    margin: 5% auto;
-    color: #06285D;
-    background-color: #fafafa;
+mat-form-field .mat-form-field-flex {
+  height: auto;
+}
+
+mat-form-field .mat-form-field-infix {
+  padding: 0 8px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+mat-card-actions {
+  justify-content: space-evenly;
+}
+
+mat-list-item {
+  word-wrap: break-word;
+}
+
+h3 {
+  text-align: center;
+  font-weight: bold;
+  margin: 3%;
+}
+.mat-mdc-form-fiels-subscript-wrapper {
+  height: 0;
+}
+.mat-card-first {
+  width: fit-content;
+  margin: 5% auto;
+  color: #06285d;
+  background-color: #fafafa;
 }
 
 .mat-card-second {
-    width: 100%;
+  width: 100%;
 }
 .editmode {
-    width: 800px;
+  width: 800px;
 }
 
 .no-edit-item {
@@ -52,128 +56,105 @@ mat-form-field {
   width: fit-content;
   margin-bottom: 5px;
   background-color: white;
+  width: 100%;
+  margin-bottom: 10px;
 }
-
 
 .nutrients-container {
   display: flex;
-  justify-content: space-between; 
-  gap: 20px; 
-  flex-wrap: wrap; 
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .nutrients-container mat-list {
-  flex: 1; 
+  flex: 1;
   min-width: 45%;
 }
-  .mat-input-element {
-    height: auto; 
-    min-height: 36px; 
-    padding: 8px; 
-    box-sizing: border-box; 
-    font-size: 16px; 
-    line-height: 1.5; 
-  }
-   
-  .meal-cuisine-container {
-    display: flex;
-    justify-content: space-between; 
-    gap: 10px;
-    margin: 0 5%; 
-    flex-wrap: wrap; 
-  }
-  
-  .meal-cuisine-container mat-list {
-    flex: 1; 
-    min-width: 45%; 
-  }
-  
+.mat-input-element {
+  height: auto;
+  min-height: 36px;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-   .editableItems {
- min-height: 85px;
-    width: 60%;
-    text-align: center;
-    margin:auto
-   }
-  
-  button.mat-icon-button {
-    margin-left: 8px; 
-  }
+.meal-cuisine-container {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .edit-button, .save-button, .button-color {
-    background-color: rgb(237 182 84) !important;
-        color: #06285D !important;
-      }
-  
+.editableItems {
+  min-height: 90px;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+button.mat-icon-button {
+  margin-left: 8px;
+}
+
+.edit-button,
+.save-button,
+.button-color {
+  background-color: rgb(237 182 84) !important;
+  color: #06285d !important;
+}
+.meal-cuisine-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
 
 .cancel-button {
-    background-color: #06285D !important;
-    color: rgb(237 182 84) !important;
+  background-color: #06285d !important;
+  color: rgb(237 182 84) !important;
 }
 
 .save-cancel-btns {
   margin-top: 5%;
 }
- 
-  @media (max-width: 768px) {
-    .editmode {
-        width: 500px
-    }
-    .mat-card-first {
-        width: 550px;
-    }
 
-    .meal-cuisine-container {
-      flex-direction: column; 
-    }
-  
-    .meal-cuisine-container mat-list {
-      min-width: 100%; 
-    }
-    
-    .nutrients-container {
-      flex-direction: column; 
-    }
-  
-    .nutrients-container mat-list {
-      min-width: 100%; 
-    }
+@media (max-width: 768px) {
+  .editmode {
+    width: 500px;
   }
-  
-  @media (max-width: 480px) {
-    .editmode {
-        width: 400px;
-    }
-    .mat-card-first {
-        width: 400px;
-    }
-
-    .meal-cuisine-container {
-      flex-direction: column; 
-      gap: 10px; 
-      width: 100%;
-    }
-  
-    .meal-cuisine-container mat-list {
-      width: 100%; 
-    }
-  
-    .nutrients-container {
-      flex-direction: column; 
-      gap: 10px; 
-      width: 100%; 
-    }
-  
-    .nutrients-container mat-list {
-      width: 100%;
-    }
-  
-    .no-edit-item {
-      width: 100%; 
-      margin-bottom: 10px; 
-    }
+  .mat-card-first {
+    width: fit-content;
   }
-  
 
+  .no-edit-item {
+    margin-bottom: 10px;
+  }
+}
 
+@media (max-width: 480px) {
+  .editmode {
+    width: 400px;
+  }
+  .mat-card-first {
+    width: fit-content;
+  }
 
+  .meal-cuisine-container {
+    gap: 10px;
+  }
+
+  .meal-cuisine-container mat-list {
+    width: 100%;
+  }
+
+  .nutrients-container {
+    gap: 10px;
+  }
+
+  .nutrients-container mat-list {
+    width: 100%;
+  }
+
+  .no-edit-item {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+}

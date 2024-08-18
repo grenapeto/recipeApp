@@ -1,20 +1,19 @@
-
-a { 
-    text-decoration: none;
-    color: #06285D;
-    padding: 0 10px;
-    font-family: 'Oswald';
+a {
+  text-decoration: none;
+  color: #06285d;
+  padding: 0 10px;
+  font-family: "Oswald";
 }
 
 a:hover {
-    color: rgb(237 182 84) !important;
+  color: rgb(237 182 84) !important;
 }
 
-  nav {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-  }
-  mat-toolbar {
-    border-bottom: 1px dotted;
-  }
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+mat-toolbar {
+  border-bottom: 1px dotted;
+}

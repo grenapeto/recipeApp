@@ -1,8 +1,15 @@
 <mat-card class="mat-card-first">
   <mat-card-header>
-    <mat-card-title class="header-left">{{ recipe?.recipe.label }}</mat-card-title>
+    <mat-card-title class="header-left">{{
+      recipe?.recipe.label
+    }}</mat-card-title>
     <mat-card-actions class="header-right">
-      <button mat-raised-button *ngIf="!editMode" class="edit-button" (click)="toggleEditMode()">
+      <button
+        mat-raised-button
+        *ngIf="!editMode"
+        class="edit-button"
+        (click)="toggleEditMode()"
+      >
         Edit
       </button>
     </mat-card-actions>
@@ -13,56 +20,77 @@
   <mat-card-content>
     <ng-container *ngIf="!editMode; else editTemplate">
       <h3>Ingredients:</h3>
-      <mat-list role="list" class="details">
+      <mat-list role="list">
         <mat-list-item
-          role="listitem" class="no-edit-item"
-          *ngFor="let ingredient of recipe.recipe.ingredientLines">
+          role="listitem"
+          class="no-edit-item"
+          *ngFor="let ingredient of recipe.recipe.ingredientLines"
+        >
           {{ ingredient }}
         </mat-list-item>
       </mat-list>
       <mat-divider></mat-divider>
       <h3>Nutrients:</h3>
       <div class="nutrients-container">
-        <mat-list role="list" class="details">
+        <mat-list role="list">
           <mat-list-item role="listitem" class="no-edit-item">
-            Calories: {{ recipe.recipe.totalNutrients.ENERC_KCAL.quantity | number: '1.1-2' }} kcal
+            Calories:
+            {{
+              recipe.recipe.totalNutrients.ENERC_KCAL.quantity
+                | number : "1.1-2"
+            }}
+            kcal
           </mat-list-item>
           <mat-list-item role="listitem" class="no-edit-item">
-            Fat: {{ recipe.recipe.totalNutrients.FAT.quantity | number: '1.1-2' }} g
+            Fat:
+            {{ recipe.recipe.totalNutrients.FAT.quantity | number : "1.1-2" }} g
           </mat-list-item>
           <mat-list-item role="listitem" class="no-edit-item">
-            Carbs: {{ recipe.recipe.totalNutrients.CHOCDF.quantity | number: '1.1-2' }} g
+            Carbs:
+            {{
+              recipe.recipe.totalNutrients.CHOCDF.quantity | number : "1.1-2"
+            }}
+            g
           </mat-list-item>
         </mat-list>
-        
-        <mat-list role="list" class="details">
+
+        <mat-list role="list">
           <mat-list-item role="listitem" class="no-edit-item">
-            Sugar: {{ recipe.recipe.totalNutrients.SUGAR.quantity | number: '1.1-2' }} g
+            Sugar:
+            {{ recipe.recipe.totalNutrients.SUGAR.quantity | number : "1.1-2" }}
+            g
           </mat-list-item>
           <mat-list-item role="listitem" class="no-edit-item">
-            Protein: {{ recipe.recipe.totalNutrients.PROCNT.quantity | number: '1.1-2' }} g
+            Protein:
+            {{
+              recipe.recipe.totalNutrients.PROCNT.quantity | number : "1.1-2"
+            }}
+            g
+          </mat-list-item>
+          <mat-list-item role="listitem" class="no-edit-item">
+            Cholesterol:
+            {{ recipe.recipe.totalNutrients.CHOLE.quantity | number : "1.1-2" }}
+            mg
           </mat-list-item>
         </mat-list>
       </div>
 
-
       <mat-divider></mat-divider>
-        <h3>Meal and Cuisine Types:</h3>
-        <div class="meal-cuisine-container">
-          <mat-list role="list" class="details">
-            <mat-list-item role="listitem" class="no-edit-item">
-              Meal Type: {{ recipe.recipe.mealType }}
-            </mat-list-item>
-          </mat-list>
-        
-          <mat-list role="list" class="details">
-            <mat-list-item role="listitem" class="no-edit-item">
-              Cuisine Type: {{ recipe.recipe.cuisineType }}
-            </mat-list-item>
-          </mat-list>
-        </div>
-    </ng-container>
+      <h3>Meal and Cuisine Types:</h3>
+      <div class="meal-cuisine-container">
+        <mat-list role="list">
+          <mat-list-item role="listitem" class="no-edit-item">
+            Meal Type: {{ recipe.recipe.mealType }}
+          </mat-list-item>
+        </mat-list>
 
+        <mat-list role="list">
+          <mat-list-item role="listitem" class="no-edit-item">
+            Cuisine Type: {{ recipe.recipe.cuisineType }}
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </ng-container>
   </mat-card-content>
 </mat-card>
 
@@ -72,71 +100,97 @@
       <mat-card class="editmode">
         <h3>Ingredients:</h3>
         <mat-list>
-          <mat-list-item *ngFor="let ingredient of recipe.recipe.ingredientLines; let i = index" class="editableItems">
-            <mat-form-field>
+          <mat-list-item
+            *ngFor="
+              let ingredient of recipe.recipe.ingredientLines;
+              let i = index
+            "
+            class="editableItems"
+          >
+            <mat-form-field appearance="outline">
               <mat-label>Ingredient {{ i + 1 }}</mat-label>
-              <input matInput [(ngModel)]="recipe.recipe.ingredientLines[i]" placeholder="Ingredient" />
+              <input
+                matInput
+                [(ngModel)]="recipe.recipe.ingredientLines[i]"
+                placeholder="Ingredient"
+              />
             </mat-form-field>
             <button mat-icon-button color="warn" (click)="removeIngredient(i)">
               <mat-icon>remove_circle</mat-icon>
             </button>
           </mat-list-item>
-          <button mat-raised-button class="button-color" (click)="addIngredient()">
+          <button
+            mat-raised-button
+            class="button-color"
+            (click)="addIngredient()"
+          >
             <mat-icon>add_circle</mat-icon> Add Ingredient
           </button>
         </mat-list>
-      
-        <!-- <h3>Nutrients:</h3>
-       <mat-list>
-          <mat-list-item *ngFor="let nutrients of recipe.recipe.totalNutrients; let i = index" class="editableItems">
-            <mat-form-field>
-              <mat-label>Nutrients {{ i + 1 }}</mat-label>
-              <input matInput [(ngModel)]="recipe.recipe.totalNutrients.ENERC_KCAL.quantity[i]" placeholder="nutrients" />
-            </mat-form-field>
-            <button mat-icon-button color="warn" (click)="removeNutrients(i)">
-              <mat-icon>remove_circle</mat-icon>
-            </button>
-          </mat-list-item>
-          <button mat-raised-button class="button-color" (click)="addNutrients()">
-            <mat-icon>add_circle</mat-icon> Add Nutrient
-          </button>
-        </mat-list>   -->
-
-
         <h3>Meal Type:</h3>
         <mat-list>
-          <mat-list-item *ngFor="let mealType of recipe.recipe.mealType; let i = index" class="editableItems">
-            <mat-form-field>
+          <mat-list-item
+            *ngFor="let mealType of recipe.recipe.mealType; let i = index"
+            class="editableItems"
+          >
+            <mat-form-field appearance="outline">
               <mat-label>Meal Type {{ i + 1 }}</mat-label>
-              <input matInput [(ngModel)]="recipe.recipe.mealType[i]" placeholder="meal" />
+              <input
+                matInput
+                [(ngModel)]="recipe.recipe.mealType[i]"
+                placeholder="meal"
+              />
             </mat-form-field>
             <button mat-icon-button color="warn" (click)="removeMealType(i)">
               <mat-icon>remove_circle</mat-icon>
             </button>
           </mat-list-item>
-          <button mat-raised-button class="button-color" (click)="addMealType()">
+          <button
+            mat-raised-button
+            class="button-color"
+            (click)="addMealType()"
+          >
             <mat-icon>add_circle</mat-icon> Add Meal Type
           </button>
         </mat-list>
         <h3>Cuisine Type:</h3>
         <mat-list>
-          <mat-list-item *ngFor="let mealType of recipe.recipe.cuisineType; let i = index" class="editableItems">
-            <mat-form-field>
+          <mat-list-item
+            *ngFor="let mealType of recipe.recipe.cuisineType; let i = index"
+            class="editableItems"
+          >
+            <mat-form-field appearance="outline">
               <mat-label>Cuisine Type {{ i + 1 }}</mat-label>
-              <input matInput [(ngModel)]="recipe.recipe.cuisineType[i]" placeholder="cuisine" />
+              <input
+                matInput
+                [(ngModel)]="recipe.recipe.cuisineType[i]"
+                placeholder="cuisine"
+              />
             </mat-form-field>
             <button mat-icon-button color="warn" (click)="removeCuisineType(i)">
               <mat-icon>remove_circle</mat-icon>
             </button>
           </mat-list-item>
-          <button mat-raised-button class="button-color" (click)="addCuisineType()">
+          <button
+            mat-raised-button
+            class="button-color"
+            (click)="addCuisineType()"
+          >
             <mat-icon>add_circle</mat-icon> Add Cuisine Type
           </button>
         </mat-list>
 
         <mat-card-actions class="save-cancel-btns">
-          <button mat-raised-button class="save-button" (click)="saveChanges()">Save</button>
-          <button mat-raised-button class="cancel-button" (click)="cancelChanges()">Cancel</button>
+          <button mat-raised-button class="save-button" (click)="saveChanges()">
+            Save
+          </button>
+          <button
+            mat-raised-button
+            class="cancel-button"
+            (click)="cancelChanges()"
+          >
+            Cancel
+          </button>
         </mat-card-actions>
       </mat-card>
     </ng-template>
