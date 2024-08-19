@@ -4,13 +4,27 @@
       <mat-card-title>{{ post.recipe.label }}</mat-card-title>
     </mat-card-header>
     <div class="duration">
-      <mat-icon class="icon">query_builder</mat-icon>{{ post.recipe.totalTime }} mins
+      <mat-icon class="icon">query_builder</mat-icon
+      >{{ post.recipe.totalTime }} mins
     </div>
-    <img mat-card-image [src]="post.recipe.image" alt="{{ post.recipe.label }}">
+    <img
+      mat-card-image
+      [src]="post.recipe.image"
+      alt="{{ post.recipe.label }}"
+    />
     <div class="container">
       <div class="row">
-        <app-recipe-detail [recipeId]="post._links.self.href" class="btns btn-left"></app-recipe-detail>
-        <button mat-button (click)="deleteRecipe(post.recipe.uri)" class="btns btn-right">Delete Recipe</button>
+        <app-recipe-detail
+          [recipeId]="post._links.self.href"
+          class="btns btn-left"
+        ></app-recipe-detail>
+        <button
+          mat-button
+          (click)="deleteRecipe(post.recipe.uri)"
+          class="btns btn-right"
+        >
+          Delete Recipe
+        </button>
       </div>
     </div>
   </mat-card>

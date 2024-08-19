@@ -1,13 +1,13 @@
 // import { Injectable } from '@angular/core';
 // import { Observable, of } from 'rxjs';
-// import { MOCK_RECIPES } from './mock-recipes'; 
+// import { MOCK_RECIPES } from './mock-recipes';
 // import { map } from 'rxjs';
 // import { HttpClient } from '@angular/common/http';
 // @Injectable({
 //   providedIn: 'root',
 // })
 // export class RecipeService {
-//   private recipes = MOCK_RECIPES || []; 
+//   private recipes = MOCK_RECIPES || [];
 
 //   constructor() {}
 
@@ -21,9 +21,9 @@
 //     const recipe = this.recipes.find((r) => r.id === id);
 
 //     if (recipe) {
-//       console.log('Found Recipe:', recipe.name); 
+//       console.log('Found Recipe:', recipe.name);
 //     } else {
-//       console.log('Recipe not found for ID:', id); 
+//       console.log('Recipe not found for ID:', id);
 //     }
 
 //     return of(recipe);
@@ -59,33 +59,31 @@
 // }
 
 import { inject, Injectable } from '@angular/core';
-import { catchError, Observable, of } from 'rxjs';
-import { MOCK_RECIPES } from './mock-recipes'; 
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
-  
   private recipes: any[] = [];
   recipe: any;
 
-httpClient = inject(HttpClient); //nowe
-private apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&app_id=d78a8854&app_key=%20e8e08c0ff7ca76b4c80dccce32b4f755';
-constructor() {}
-  
+  httpClient = inject(HttpClient);
+  private apiUrl =
+    'https://api.edamam.com/api/recipes/v2?type=public&app_id=d78a8854&app_key=%20e8e08c0ff7ca76b4c80dccce32b4f755';
+  constructor() {}
+
   fetchRecipesFromApi(): Observable<any[]> {
     return this.httpClient.get<any>(this.apiUrl).pipe(
-      map(response => response.hits.map((hit: any) => hit.recipe)),
-      map(recipes => {
+      map((response) => response.hits.map((hit: any) => hit.recipe)),
+      map((recipes) => {
         this.recipes = recipes;
         return this.recipes;
       })
     );
   }
 
-  // Get all recipes (from API)
   getRecipes(): Observable<any[]> {
     if (this.recipes.length) {
       return of(this.recipes);
@@ -94,23 +92,18 @@ constructor() {}
     }
   }
 
-  
-    // Get recipe by ID
-    getRecipeById(href: string): Observable<any> {
-      return this.httpClient.get(href);
-    }
-    
-  // Add a new recipe (note: API might not support POST, this is just for local addition)
+  getRecipeById(href: string): Observable<any> {
+    return this.httpClient.get(href);
+  }
+
   addRecipe(recipe: any): Observable<any> {
-    // Generate a unique ID by using URI as the identifier.
     recipe.uri = `recipe_${Math.random().toString(36).substring(2)}`;
     recipe.image = recipe.image || 'default-image.jpg';
-    
+
     this.recipes.push(recipe);
     return of(recipe);
   }
 
-  // Update a recipe
   updateRecipe(updatedRecipe: any): Observable<any> {
     const index = this.recipes.findIndex((r) => r.uri === updatedRecipe.uri);
     if (index > -1) {
@@ -120,7 +113,6 @@ constructor() {}
     return of(null);
   }
 
-  // Delete a recipe by URI
   deleteRecipe(uri: string): Observable<any> {
     this.recipes = this.recipes.filter((r) => r.uri !== uri);
     return of({ uri });

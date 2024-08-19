@@ -1,5 +1,3 @@
-
-
 export interface Recipe {
     foodId: string;
     label: string;

@@ -24,14 +24,15 @@ import { RecipeService } from './recipe.service';
     MatFormFieldModule,
     MatCardModule,
     MatIconModule,
-    MatToolbarModule, HttpClientModule,
+    MatToolbarModule,
+    HttpClientModule,
     RouterModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   providers: [RecipeService],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'recipe-book';
